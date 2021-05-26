@@ -1,5 +1,5 @@
 {
-  "name": "winston-logstash-ts",
+  "name": "@gogoout/winston-logstash-ts",
   "version": "0.2.4",
   "description": "Winston's Logstash transport in UDP protocol",
   "main": "dist/index.js",

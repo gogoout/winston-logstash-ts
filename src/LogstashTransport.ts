@@ -29,7 +29,12 @@ export class LogstashTransport extends Transport {
 
   public async connect() {
     if (this.protocol === "udp") {
-      const udpClient = dgram.createSocket("udp4");
+      // https://www.elastic.co/guide/en/logstash/current/plugins-inputs-udp.html#buffer_size
+      // maximum byte size is default to 65536
+      const udpClient = dgram.createSocket({
+        type: 'udp4',
+        sendBufferSize: 65536
+      });
       udpClient.unref();
       return udpClient;
     } else if (this.protocol === "tcp") {
