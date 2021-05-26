@@ -109,7 +109,7 @@ export class LogstashTransport extends Transport {
             if (error) {
               reject(error);
             } else {
-              resolve();
+              resolve('');
             }
           });
         });
